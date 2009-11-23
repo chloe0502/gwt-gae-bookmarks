@@ -1,0 +1,66 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:e="urn:import:com.chrome.extension.client.widgets">
+	<ui:style type="com.chrome.extension.client.widgets.BookmarkViewImpl.BookmarkStyle">
+		.up,.down {
+			\-moz-border-radius: 5px;
+			\-webkit-border-radius: 5px;
+			margin: 2px;
+			width: 70px;
+			height: 70px;
+			cursor: pointer;
+			text-align: center;
+			position: relative;
+		}
+		
+		.up {
+			border: 2px solid #DDDDDD;
+			opacity: 0.6;
+		}
+		
+		.down {
+			border: 2px solid #AAAAAA;
+			opacity: 1.0;
+		}
+		
+		.image {
+			width: 70px;
+			height: 50px;
+		}
+		
+		.label {
+			color: gray;
+			text-align: center;
+			overflow: hidden;
+		}
+		
+		.deleteHide {
+			visibility: hidden;
+		}
+		
+		.deleteVisible, .deleteOver {
+			position: absolute;
+			top: 3px;
+			right: 3px;
+			background-color: Red;
+			border: 1px solid Gray;
+			\-moz-border-radius: 20px;
+			\-webkit-border-radius: 20px;
+			width: 10px;
+			height: 10px;
+		}
+		
+		.deleteVisible {
+			opacity: 0.7;	
+		}
+		
+		.deleteOver {
+			opacity: 1.0;
+		}
+	</ui:style>
+	<e:FlowPanelMouse ui:field="button" styleName="{style.up}">
+		<g:Image ui:field="image" styleName="{style.image}"></g:Image>
+		<g:Label ui:field="label" styleName="{style.label}"></g:Label>
+		<g:Label styleName="{style.deleteHide}" ui:field="delete"></g:Label>
+	</e:FlowPanelMouse>
+</ui:UiBinder> 

@@ -1,0 +1,27 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:e="urn:import:com.chrome.extension.client.widgets">
+	<ui:style>
+		.topPanel {
+			background-color: Black;
+			color: White;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.content {
+			width: 100%;
+			height: 100%;
+		}
+	</ui:style>
+	<g:DockLayoutPanel>
+		<g:center>
+			<g:FlowPanel ui:field="bookmarks" styleName="{style.content}">
+				<g:HorizontalPanel ui:field="horizontal">
+					<e:BookmarkViewImpl ui:field="add"></e:BookmarkViewImpl>
+				</g:HorizontalPanel>
+			</g:FlowPanel>
+		</g:center>
+	</g:DockLayoutPanel>
+</ui:UiBinder> 
