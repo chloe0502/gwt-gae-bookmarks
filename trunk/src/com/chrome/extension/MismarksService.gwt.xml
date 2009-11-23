@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='mismarks'>
+	<inherits name='com.google.gwt.inject.Inject' />
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name='com.gwt.framework.Framework' />
+	<inherits name="com.google.gwt.user.DragDrop" />
+	<inherits name="com.google.gwt.search.Search"/>
+	<entry-point class='com.chrome.extension.client.MismarksService' />
+	<source path='client' />
+	
+	<set-property name="user.agent" value="safari, gecko1_8"/>
+</module>

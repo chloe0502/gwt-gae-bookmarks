@@ -1,0 +1,99 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:e="urn:import:com.chrome.extension.client.widgets">
+	
+	<ui:style type="com.chrome.extension.client.widgets.AddBookmarkViewImpl.AddBookmarkViewImplStyle">
+		.panel {
+			background-color: rgba(82, 82, 82, 0.695313);
+			padding: 10px;
+			\-moz-border-radius: 10px;
+			\-webkit-border-radius: 10px;
+		}
+		
+		.inner {
+			background-color: white;
+			padding: 10px;
+		}
+		
+		.label {
+			color: gray;
+			font-family: arial;
+			font-weight: bold;
+		}
+		
+		.image, .textbox {
+			\-moz-border-radius: 2px;
+			\-webkit-border-radius: 2px;
+			border: 1px solid #AAAAAA;
+			padding: 3px;
+		}
+		
+		.image {
+			cursor: pointer;
+			width: 70px;
+			height: 50px;	
+		}
+		
+		.link {
+			color: #0000CC;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+		
+		.buttons {
+			width: 70%;
+		}
+		
+		.addButton {
+			background-color: #7777DD;
+			padding-top: 2px;
+			padding-bottom: 2px;
+			padding-left: 10px;
+			padding-right: 10px;
+			border:0px solid;
+			cursor: pointer;
+			color: white;
+			\-moz-border-radius: 2px;
+			\-webkit-border-radius: 2px;
+		}
+
+		.errorHidden {
+			visibility: hidden;	
+			height: 0px;
+		}
+		
+		.error {
+			background-color: #CC0000;
+			opacity: 0.5;
+			color: white;
+			\-moz-border-radius: 3px;
+			\-webkit-border-radius: 3px;
+			padding: 3px;
+		}
+	</ui:style>
+	<g:FlowPanel styleName="{style.panel}">
+		<g:VerticalPanel styleName="{style.inner}">
+			<g:Label styleName="{style.label}">Name</g:Label>
+			<g:TextBox ui:field="name" styleName="{style.textbox}"></g:TextBox>
+
+			<g:Label styleName="{style.label}">Url</g:Label>
+			<g:TextBox ui:field="url" styleName="{style.textbox}"></g:TextBox>
+			<g:HTML ui:field="urlError" styleName="{style.error}">
+				<u>Bad url format error</u> 
+				<br/>
+				<i><b>http://</b>valid url</i>
+				<br/>
+			</g:HTML>
+
+			<g:Label styleName="{style.label}">Image</g:Label>
+			<e:ImageSelectBox ui:field="image" styleName="{style.image}"></e:ImageSelectBox>
+
+			<g:HorizontalPanel styleName="{style.buttons}"
+				ui:field="buttons">
+				<g:Button ui:field="add" styleName="{style.addButton}">Add</g:Button>
+				<g:Anchor ui:field="cancel" styleName="{style.link}">Cancel</g:Anchor>
+			</g:HorizontalPanel>
+		</g:VerticalPanel>
+	</g:FlowPanel>
+</ui:UiBinder> 
